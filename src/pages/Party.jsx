@@ -1,11 +1,8 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import PageNav from "../components/PageNav";
-import Search from "../components/Search";
 import styles from "./Party.module.css";
-import Find from "../components/Find";
 
 function Party({ partyMembers, partySize }) {
-  const [query, setQuery] = useState("");
   return (
     <main className={styles.party}>
       <PageNav />
@@ -15,10 +12,14 @@ function Party({ partyMembers, partySize }) {
             partyMembers.map((member) => console.log(member.name))
           )
         ) : (
-          <h1>There is no one in your party! 🥺</h1>
+          <>
+            <h1>There is no one in your party! 🥺</h1>
+            <h2>Let's find your friends!</h2>
+            <Link to="/findfriends" className="cta">
+              Let's Go!
+            </Link>
+          </>
         )}
-        <Search query={query} setQuery={setQuery} />
-        <Find />
       </section>
     </main>
   );

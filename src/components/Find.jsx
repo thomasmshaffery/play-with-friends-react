@@ -1,4 +1,8 @@
-function Find() {
-  return <button className="find">Find</button>;
+function Find({ query }) {
+  return (
+    <button className="find" onClick={() => console.log(query)}>
+      Find
+    </button>
+  );
 }
 export default Find;

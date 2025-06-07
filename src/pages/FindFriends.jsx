@@ -1,7 +1,12 @@
+import { useState } from "react";
+import Find from "../components/Find";
 import PageNav from "../components/PageNav";
+import Search from "../components/Search";
 import styles from "./FindFriends.module.css";
 
 function FindFriends() {
+  const [query, setQuery] = useState([]);
+
   return (
     <main className={styles.findfriends}>
       <PageNav />
@@ -21,6 +26,8 @@ function FindFriends() {
           <br />
           <span>Step 3:</span> Find your friend!
         </h2>
+        <Search query={query} setQuery={setQuery} />
+        <Find query={query} />
       </section>
     </main>
   );
