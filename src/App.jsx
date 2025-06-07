@@ -3,46 +3,27 @@ import Party from "./pages/Party";
 import Homepage from "./pages/Homepage";
 import Games from "./pages/Games";
 import PageNotFound from "./pages/PageNotFound";
-import { useReducer } from "react";
-
-const initialState = {
-  partyMembers: [
-    // {
-    //   name: "tom",
-    //   age: 34,
-    // },
-    // {
-    //   name: "matt",
-    //   age: 35,
-    // },
-    // {
-    //   name: "Mooch",
-    //   age: "babby",
-    // },
-    // {
-    //   name: "Noodles",
-    //   age: "babby",
-    // },
-  ],
-  games: [],
-};
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "addUser":
-      return {
-        ...state,
-        partySize: state.partySize + 1,
-      };
-    default:
-      return { state };
-  }
-}
+import { useState } from "react";
 
 function App() {
-  const [{ partyMembers, games }, dispatch] = useReducer(reducer, initialState);
+  const [partyMembers, setPartyMembers] = useState([]);
+  const [games, setGames] = useState([]);
   const partySize = partyMembers.length;
   const numOfGames = games.length;
+
+  function handleAddPartyMember(member) {
+    setPartyMembers((partyMembers) => [...partyMembers, member]);
+  }
+
+  function handleRemovePartyMember(id) {
+    setPartyMembers((partyMembers) =>
+      partyMembers.filter((member) => member.id !== id)
+    );
+  }
+
+  function addGame(game) {
+    setGames([...games, game]);
+  }
 
   return (
     <BrowserRouter>
@@ -50,19 +31,11 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route
           path="party"
-          element={
-            <Party
-              partyMembers={partyMembers}
-              partySize={partySize}
-              dispatch={dispatch}
-            />
-          }
+          element={<Party partyMembers={partyMembers} partySize={partySize} />}
         />
         <Route
           path="games"
-          element={
-            <Games games={games} numOfGames={numOfGames} dispatch={dispatch} />
-          }
+          element={<Games games={games} numOfGames={numOfGames} />}
         />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
