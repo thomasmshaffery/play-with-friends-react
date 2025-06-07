@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # File
-./src/key.js
+src/key.js
