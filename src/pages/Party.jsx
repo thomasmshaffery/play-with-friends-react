@@ -5,7 +5,9 @@ function Party() {
   return (
     <main className={styles.party}>
       <PageNav />
-      Party Creator
+      <section>
+        <h1>Party Creator</h1>
+      </section>
     </main>
   );
 }
