@@ -25,17 +25,16 @@
 
 /* CSS Modules feature */
 .nav a:global(.active) {
-  color: var(--color-text);
-  text-decoration: underline;
+  color: var(--color-background);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-highlight),
+    var(--color-text-light)
+  );
+  transform: rotate3d(360);
+  border-radius: 5px;
+  /* text-decoration: underline;
   text-decoration-thickness: 3px;
   text-decoration-color: var(--color-highlight);
-  text-underline-offset: 4px;
-}
-
-a.ctaLink:link,
-a.ctaLink:visited {
-  background-color: var(--color-brand--2);
-  color: var(--color-dark--0);
-  padding: 0.8rem 2rem;
-  border-radius: 7px;
+  text-underline-offset: 4px; */
 }

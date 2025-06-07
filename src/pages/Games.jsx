@@ -1,11 +1,12 @@
 import PageNav from "../components/PageNav";
+import styles from "./Games.module.css";
 
 function Games() {
   return (
-    <div>
+    <main className={styles.games}>
       <PageNav />
       Your games here!
-    </div>
+    </main>
   );
 }
 export default Games;

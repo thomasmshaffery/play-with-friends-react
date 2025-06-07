@@ -3,7 +3,6 @@ import Party from "./pages/Party";
 import Homepage from "./pages/Homepage";
 import Games from "./pages/Games";
 import PageNotFound from "./pages/PageNotFound";
-import Logo from "./components/Logo";
 
 function App() {
   return (
