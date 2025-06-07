@@ -1,10 +1,13 @@
+@import "https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap";
+
 :root {
   --color-primary: #6741d9;
   --color-primary-light: #7950f2;
-  --color-text: #dee2e6;
+  --color-text: #fbfbff;
+  --color-text-light: #01baef;
   --color-text-dark: #adb5bd;
-  --color-background: #131446;
-  --color-highlight: #d640c6;
+  --color-background: #0d1127;
+  --color-highlight: #db05c1;
   --color-red-dark: #e03131;
 }
 
@@ -19,24 +22,10 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-
+  font-family: "Exo";
   color: var(--color-text);
   background-color: var(--color-background);
   padding: 2.4rem;
-}
-
-/* ******* */
-
-.nav-bar {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  height: 7.2rem;
-  padding: 0 3.2rem;
-  background-color: var(--color-primary);
-  border-radius: 0.9rem;
 }
 
 .main {
@@ -71,22 +60,6 @@ body {
 }
 
 /* ******* */
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.logo span {
-  font-size: 3.2rem;
-}
-
-.logo h1 {
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: #fff;
-}
 
 .search {
   justify-self: center;

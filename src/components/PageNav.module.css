@@ -10,20 +10,26 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+  padding-right: 2rem;
 }
 
 .nav a:link,
 .nav a:visited {
   text-decoration: none;
-  color: var(--color-highlight);
+  color: var(--color-text);
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: 600;
+  padding: 10px;
 }
 
 /* CSS Modules feature */
-.nav :global(.active) {
-  background-color: var(--color-highlight);
+.nav a:global(.active) {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--color-highlight);
+  text-underline-offset: 4px;
 }
 
 a.ctaLink:link,
