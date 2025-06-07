@@ -1,7 +1,8 @@
 import PageNav from "../components/PageNav";
+import Search from "../components/Search";
 import styles from "./Party.module.css";
 
-function Party({ partyMembers, partySize, dispatch }) {
+function Party({ partyMembers, partySize }) {
   return (
     <main className={styles.party}>
       <PageNav />
@@ -11,7 +12,11 @@ function Party({ partyMembers, partySize, dispatch }) {
             partyMembers.map((member) => console.log(member.name))
           )
         ) : (
-          <h1>There is no one in your party!</h1>
+          <>
+            <h1>There is no one in your party! 🥺</h1>
+            <h2>Let's find you some party members!</h2>
+            <Search />
+          </>
         )}
       </section>
     </main>
