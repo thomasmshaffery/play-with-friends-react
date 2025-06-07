@@ -1,4 +1,11 @@
+import PageNav from "../components/PageNav";
+
 function Games() {
-  return <div>Your games here!</div>;
+  return (
+    <div>
+      <PageNav />
+      Your games here!
+    </div>
+  );
 }
 export default Games;

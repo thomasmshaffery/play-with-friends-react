@@ -1,4 +1,11 @@
+import PageNav from "../components/PageNav";
+
 function Party() {
-  return <div>Party Creator</div>;
+  return (
+    <div>
+      <PageNav />
+      Party Creator
+    </div>
+  );
 }
 export default Party;
