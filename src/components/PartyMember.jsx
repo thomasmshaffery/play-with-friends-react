@@ -1,4 +1,4 @@
-function PartyMember() {
-  return <div></div>;
+function PartyMember({ member }) {
+  return <div>{member.name}</div>;
 }
 export default PartyMember;

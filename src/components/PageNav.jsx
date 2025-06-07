@@ -9,6 +9,9 @@ function PageNav() {
 
       <ul>
         <li>
+          <NavLink to="/findfriends">Find Friends</NavLink>
+        </li>
+        <li>
           <NavLink to="/party">Party</NavLink>
         </li>
         <li>

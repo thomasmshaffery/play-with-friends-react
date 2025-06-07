@@ -13,8 +13,8 @@ function Homepage() {
           your party and start playing faster than ever. The best part? You can
           do it all in one place.
         </h2>
-        <Link to="/party" className="cta">
-          Build Your Party
+        <Link to="/findfriends" className="cta">
+          Get Started
         </Link>
       </section>
     </main>

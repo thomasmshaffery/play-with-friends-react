@@ -4,6 +4,7 @@ import Homepage from "./pages/Homepage";
 import Games from "./pages/Games";
 import PageNotFound from "./pages/PageNotFound";
 import { useState } from "react";
+import FindFriends from "./pages/FindFriends";
 
 function App() {
   const [partyMembers, setPartyMembers] = useState([]);
@@ -21,21 +22,40 @@ function App() {
     );
   }
 
-  function addGame(game) {
+  function handleAddGame(game) {
     setGames([...games, game]);
+  }
+
+  function handleRemoveGame(id) {
+    setGames((games) => games.filter((game) => game.id !== id));
   }
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="findfriends" element={<FindFriends />} />
         <Route
           path="party"
-          element={<Party partyMembers={partyMembers} partySize={partySize} />}
+          element={
+            <Party
+              partyMembers={partyMembers}
+              onAddPartyMember={handleAddPartyMember}
+              onRemovePartyMember={handleRemovePartyMember}
+              partySize={partySize}
+            />
+          }
         />
         <Route
           path="games"
-          element={<Games games={games} numOfGames={numOfGames} />}
+          element={
+            <Games
+              games={games}
+              onAddGame={handleAddGame}
+              onRemoveGame={handleRemoveGame}
+              numOfGames={numOfGames}
+            />
+          }
         />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

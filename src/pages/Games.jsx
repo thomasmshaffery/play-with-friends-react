@@ -1,7 +1,7 @@
 import PageNav from "../components/PageNav";
 import styles from "./Games.module.css";
 
-function Games() {
+function Games({ games, onAddGame, onRemoveGame, numOfGames }) {
   return (
     <main className={styles.games}>
       <PageNav />
